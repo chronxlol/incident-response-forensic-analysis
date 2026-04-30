@@ -1,44 +1,41 @@
-# Cybersecurity Risk Assessment (SLS)
+# Incident Response & Forensic Analysis
 
 ## Overview
-This project evaluates the cybersecurity posture of a logistics company (SLS) using ISO 27001 and NIST CSF.
+This project investigates a simulated cyber incident involving malware execution, privilege escalation, and data exfiltration.
 
-## Key Findings
-- High-risk environment
-- Legacy systems increase vulnerabilities
-- No MFA implemented
-- Weak incident response capability
-- Poor security governance
+## Incident Summary
+- Initial access via phishing email
+- Malicious file: patch.exe
+- Privilege escalation via admin account
+- Data exfiltration from file server
+- Remote access via TOR node
 
-## Critical Assets
-- FleetCore system
-- Customer data
-- Network infrastructure
+## Key Indicators of Compromise (IoCs)
+- Malicious IP: 183[.]81[.]169[.]238
+- TOR exit node: 171[.]25[.]193[.]25
+- File: secret-information-results-passwords.txt
+- Suspicious account: Administrat0r
 
-## Major Risks
-- Ransomware attacks
-- Data breaches
-- Unauthorized access
-- Operational disruption
+## Attack Techniques (MITRE ATT&CK)
+- T1136 – Create Account
+- T1059 – PowerShell Execution
+- T1041 – Data Exfiltration
+- T1078 – Valid Accounts
 
-## Risk Model
-Asset → Threat → Vulnerability (ATV)
+## Attack Flow
+1. Phishing email delivered malware
+2. Admin executes malicious file
+3. Persistence established
+4. Data exfiltrated
+5. Access sold on dark web
 
-## Key Weaknesses
-- No centralized security authority
-- Lack of employee awareness
-- Poor patch management
-- No incident response team
-
-## Mitigation Strategy
+## Remediation
+- Isolate infected hosts
+- Remove malware and persistence
+- Reset credentials
+- Apply patches
 - Implement MFA
-- Improve patching processes
-- Security awareness training
-- Establish incident response plan
-
-## Frameworks Used
-- ISO/IEC 27001
-- NIST Cybersecurity Framework
+- Enable monitoring
 
 ## Key Learning
-Security failures are not just technical — governance and human factors are major risk drivers.
+Most breaches start with human error and escalate due to poor access control.
